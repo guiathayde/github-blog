@@ -66,3 +66,9 @@ export const Info = styled.div`
     color: ${({ theme }) => theme.subtitle};
   }
 `;
+
+export const LinkContainer = styled.div`
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+`;

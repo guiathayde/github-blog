@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faBuilding, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 
+import { Link } from '../../../../components/Link';
+
 import {
   ProfileContainer,
   Avatar,
@@ -10,6 +12,7 @@ import {
   Bio,
   InfoContainer,
   Info,
+  LinkContainer,
 } from './styles';
 
 interface ProfileProps {
@@ -42,6 +45,10 @@ export function Profile({ avatar, name, bio, username }: ProfileProps) {
           </Info>
         </InfoContainer>
       </ProfileDetailsContainer>
+
+      <LinkContainer>
+        <Link label="GITHUB" url="https://github.com/guiathayde" />
+      </LinkContainer>
     </ProfileContainer>
   );
 }
