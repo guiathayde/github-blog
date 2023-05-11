@@ -13,6 +13,9 @@ export const WrapperContent = styled.div`
   overflow-y: auto;
 
   max-width: 864px;
+  width: 80%;
 
-  margin: -5.25rem auto 0;
+  margin-top: -5.25rem;
+  margin-left: auto;
+  margin-right: auto;
 `;
