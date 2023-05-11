@@ -7,3 +7,12 @@ export const LayoutContainer = styled.div`
   width: 100vw;
   height: 100vh;
 `;
+
+export const WrapperContent = styled.div`
+  flex: 1;
+  overflow-y: auto;
+
+  max-width: 864px;
+
+  margin: -5.25rem auto 0;
+`;
