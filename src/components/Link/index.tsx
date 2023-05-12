@@ -10,7 +10,7 @@ interface LinkProps {
 
 export function Link({ label, url }: LinkProps) {
   return (
-    <LinkContainer href={url}>
+    <LinkContainer href={url} target="_blank">
       <Label>{label}</Label>
       <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
     </LinkContainer>

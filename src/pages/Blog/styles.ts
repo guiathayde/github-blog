@@ -5,6 +5,12 @@ export const BlogContainer = styled.main`
   flex-direction: column;
 
   width: 100%;
+
+  padding-bottom: 4rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const HeaderPublications = styled.header`
@@ -28,4 +34,12 @@ export const HeaderPublications = styled.header`
     text-align: right;
     color: ${({ theme }) => theme.span};
   }
+`;
+
+export const CardList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  margin-bottom: 4rem;
 `;

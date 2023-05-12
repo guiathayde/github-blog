@@ -10,7 +10,6 @@ export const LayoutContainer = styled.div`
 
 export const WrapperContent = styled.div`
   flex: 1;
-  overflow-y: auto;
 
   max-width: 864px;
   width: 80%;
