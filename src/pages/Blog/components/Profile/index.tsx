@@ -15,34 +15,40 @@ import {
   LinkContainer,
 } from './styles';
 
+import { User } from '../../../../interfaces/User';
+
 interface ProfileProps {
-  avatar: any;
-  name: string;
-  bio: string;
-  username: string;
+  user: User;
 }
 
-export function Profile({ avatar, name, bio, username }: ProfileProps) {
+export function Profile({ user }: ProfileProps) {
   return (
     <ProfileContainer>
-      <Avatar src={avatar} alt={name} />
+      <Avatar src={user.avatar_url} alt={user.name} />
 
       <ProfileDetailsContainer>
-        <Name>{name}</Name>
-        <Bio>{bio}</Bio>
+        <Name>{user.name}</Name>
+        <Bio>{user.bio}</Bio>
         <InfoContainer>
           <Info>
             <FontAwesomeIcon icon={faGithub} />
-            <span>{username}</span>
+            <span>{user.login}</span>
           </Info>
-          <Info>
-            <FontAwesomeIcon icon={faBuilding} />
-            <span>{username}</span>
-          </Info>
-          <Info>
-            <FontAwesomeIcon icon={faUserGroup} />
-            <span>13 seguidores</span>
-          </Info>
+          {user.company && (
+            <Info>
+              <FontAwesomeIcon icon={faBuilding} />
+              <span>{user.company}</span>
+            </Info>
+          )}
+          {user.followers > 0 && (
+            <Info>
+              <FontAwesomeIcon icon={faUserGroup} />
+              <span>
+                {user.followers}{' '}
+                {user.followers > 1 ? 'seguidores' : 'seguidor'}
+              </span>
+            </Info>
+          )}
         </InfoContainer>
       </ProfileDetailsContainer>
 

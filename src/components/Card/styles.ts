@@ -13,6 +13,16 @@ export const CardContainer = styled.div`
 
   background: ${({ theme }) => theme.post};
   border-radius: 10px;
+  border: 2px solid transparent;
+
+  cursor: pointer;
+
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme.label};
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
 `;
 
 export const CardHeader = styled.header`
@@ -43,6 +53,8 @@ export const Content = styled.div`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  width: -webkit-fill-available;
 
   font-size: 1rem;
   line-height: 1.6;

@@ -1,19 +1,24 @@
+import { HTMLAttributes } from 'react';
+import ReactMarkdown from 'react-markdown';
+
 import { CardContainer, CardHeader, Title, DateTime, Content } from './styles';
 
-interface CardProps {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   date: string;
   content: string;
 }
 
-export function Card({ title, date, content }: CardProps) {
+export function Card({ title, date, content, ...rest }: CardProps) {
   return (
-    <CardContainer>
+    <CardContainer {...rest}>
       <CardHeader>
         <Title>{title}</Title>
         <DateTime>{date}</DateTime>
       </CardHeader>
-      <Content>{content}</Content>
+      <Content>
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </Content>
     </CardContainer>
   );
 }
